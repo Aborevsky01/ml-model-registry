@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Model {{ model.name }}</title>
+  </head>
+  <body>
+    <h1>Model: {{ model.name }}</h1>
+    <p>{{ model.description }}</p>
+    <p><b>Owner:</b> {{ model.owner }}</p>
+    <p><b>Domain:</b> {{ model.domain }}</p>
+
+    <h2>Versions</h2>
+    <table border="1" cellpadding="4" cellspacing="0">
+      <tr>
+        <th>Version</th>
+        <th>Stage</th>
+        <th>Val accuracy</th>
+        <th>Created at</th>
+        <th>Actions</th>
+      </tr>
+      {% for v in versions %}
+      <tr>
+        <td>{{ v.version }}</td>
+        <td>{{ v.stage }}</td>
+        <td>{{ v.metrics.val_accuracy if v.metrics and v.metrics.val_accuracy is not none }}</td>
+        <td>{{ v.created_at }}</td>
+        <td>
+          <form method="post" action="/ui/models/{{ model.name }}/versions/{{ v.version }}/promote">
+            <button type="submit">Promote to PROD</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <p><a href="/ui/models">Back to list</a></p>
+  </body>
+</html>

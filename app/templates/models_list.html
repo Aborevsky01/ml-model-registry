@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Model Registry - Models</title>
+  </head>
+  <body>
+    <h1>Registered Models</h1>
+    <table border="1" cellpadding="4" cellspacing="0">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Owner</th>
+        <th>Updated at</th>
+      </tr>
+      {% for m in models %}
+      <tr>
+        <td><a href="/ui/models/{{ m.name }}">{{ m.name }}</a></td>
+        <td>{{ m.description or "" }}</td>
+        <td>{{ m.owner or "" }}</td>
+        <td>{{ m.updated_at }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

@@ -218,3 +218,5 @@ env/
 # IDE и прочий мусор
 .vscode/
 .idea/
+*.gz
+data/
