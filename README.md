@@ -1,4 +1,4 @@
-<img width="4952" height="2494" alt="image" src="https://github.com/user-attachments/assets/75332406-8a8a-431c-a0fe-11fccd91f310" /># ML Model Registry
+# ML Model Registry
 
 A lightweight, self‑contained **Model Registry** built from scratch to bring order to the chaos of unstructured model storage.  
 Designed for internal ML teams, it provides a central place to track model metadata, manage version lifecycles, and serve production‑ready models with confidence.
