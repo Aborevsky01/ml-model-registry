@@ -12,7 +12,6 @@ class ModelBase(BaseModel):
 
 
 class ModelCreate(ModelBase):
-    """Тело запроса для POST /models"""
     pass
 
 
@@ -37,7 +36,6 @@ class ModelVersionBase(BaseModel):
 
 
 class ModelVersionCreate(ModelVersionBase):
-    """Тело запроса для POST /models/{name}/versions"""
     pass
 
 
@@ -62,7 +60,6 @@ class ModelVersionRead(BaseModel):
 
 
 class StageUpdate(BaseModel):
-    """Тело для смены стадии версии"""
     stage: str = Field(..., example="PRODUCTION")
 
 
