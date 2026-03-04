@@ -30,9 +30,9 @@ class ModelVersionBase(BaseModel):
     params: Optional[Dict[str, Any]] = None
     metrics: Optional[Dict[str, Any]] = None
     created_by: Optional[str] = Field(None, example="andrej.borevskiy")
-    training_env: Optional[str]    
-    pipeline_version: Optional[str]
-    run_id: Optional[str]
+    training_env: Optional[str] = None    
+    pipeline_version: Optional[str] = None
+    run_id: Optional[str] = None
 
 
 class ModelVersionCreate(ModelVersionBase):
@@ -51,7 +51,7 @@ class ModelVersionRead(BaseModel):
     metrics: Optional[Dict[str, Any]]
     created_at: datetime
     created_by: Optional[str]
-    training_env: Optional[str]    
+    training_env: Optional[str]     
     pipeline_version: Optional[str]
     run_id: Optional[str]
 
